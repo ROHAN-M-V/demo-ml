@@ -6,7 +6,7 @@ from openai import OpenAI
 
 Base.metadata.create_all(bind=engine)
 app = FastAPI()
-client = OpenAI(api_key="YOUR_OPENAI_API_KEY")  # Replace with your key
+client = OpenAI(api_key="8cf3238b6d70b97357059d90e41f6fd8")  # Replace with your key
 
 # CORS setup so frontend can talk to backend
 app.add_middleware(
@@ -46,5 +46,6 @@ def summarize_feedback(teacher: str):
     summary = response.choices[0].message.content
 
     avg_rating = sum(f.rating for f in feedbacks) / len(feedbacks)
+
 
     return {"teacher": teacher, "summary": summary, "avg_rating": round(avg_rating, 2)}
