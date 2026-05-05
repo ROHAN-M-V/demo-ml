@@ -4,4 +4,4 @@ sqlalchemy
 pydantic
 openai
 backend
-frontend
+frontend 
